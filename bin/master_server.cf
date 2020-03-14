@@ -1,0 +1,47 @@
+
+service server {
+#	服务类型 tcp ws
+	master_type = all
+	
+#	tcp服务监听端口号
+	master_tcp_port = :60000
+#	web socket监听端口号
+	master_ws_port = :8000
+
+#	http服务监听端口号
+	master_http_port = :8002
+#	http服务对外IP地址
+	master_http_host = 127.0.0.1
+
+#	status访问地址
+	login_host_port = 127.0.0.1:8006
+#	message访问地址
+	msg_host_port = 127.0.0.1:8008
+# thrift服务地址
+	thrift_svr_host = 127.0.0.1
+# thrift服务端口
+	thrift_svr_port = 9090
+
+#	每隔多长时间触发一次，单位为秒
+	master_wakeup = 20
+#	最大进程数
+	master_max_threads = 2
+#	线程最大协程数
+	thread_max_fibers = 100
+#	协程的堆栈空间大小，单位为字节，0表示使用系统缺省值
+	fiber_stacksize = 32768
+#	协程的读缓存大小，单位为字节，0表示使用系统缺省值
+	read_buffer_size = 256
+#	连接活动检测间隔时间，单位为秒
+	conn_timeout = 100
+	
+#	进程日志记录路径
+	master_log = /tmp/
+#	进程日志记录进程名
+	master_name=master
+	
+#路由映射规则，命令id+冒号+ip端口数组,*为缺省
+	svr_route = 123:[192.168.0.22:9090,192.168.0.7:9090]
+	svr_route = 124-126:[192.168.0.22:9090,192.168.0.7:9090]
+	svr_route = *:[127.0.0.1:9090]
+}
