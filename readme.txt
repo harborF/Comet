@@ -1,21 +1,14 @@
-1\·ÖÎªÈı¸öÄ£¿éclient£¨¿Í·ş»ú£©logic£¨Âß¼­£©£¬¹«¹²Ä£¿éÎªcommon¡¢server£»
-2\serverÖ§³Öhttp¡¢tcp¡¢websocketÈıÖÖ£¬Ä¬ÈÏ¶Ë¿Ú·Ö±ğÎª8888,8886£»
-3\ÊµÏÖÂß¼­£ºclientÁ¬½Ólogic£¬logicÍ¨¹ıhttpÁ¬½Óstatus·şÎñ£¬ÓÉstatus±£´æ×´Ì¬µ½redis¡£Èç¹ûÖØ¸´
-	µÇÂ¼£¬ÔòÓÉstatusÍ¨ÖªlogicÏàÓ¦sessionÍË³öÁ¬½Ó¡£
-4\Èç¹ûÒÑ¾­µÇÂ¼£¬¿ÉÓÉÆÓÊµ·şÎñÍÆËÍÏûÏ¢£¬×ª·¢µ½logic£¬Í¨¹ıtcpÍÆËÍ¡£ÍÆËÍµØÖ·ÈçÏÂ£º
+è¿™æ˜¯åœ¨https://github.com/acl-dev/aclæ¡†æ¶ä¸‹å¼€å‘çš„ä¸€ä¸ªç½‘ç»œä»£ç†å±‚ï¼Œå®ç°æ•°æ®è½¬å‘
+
+1\åˆ†ä¸ºä¸‰ä¸ªæ¨¡å—clientï¼ˆå®¢æœæœºï¼‰logicï¼ˆé€»è¾‘ï¼‰ï¼Œå…¬å…±æ¨¡å—ä¸ºcommonã€serverï¼›
+2\serveræ”¯æŒhttpã€tcpã€websocketä¸‰ç§ï¼Œé»˜è®¤ç«¯å£åˆ†åˆ«ä¸º8888,8886ï¼›
+3\å®ç°é€»è¾‘ï¼šclientè¿æ¥logicï¼Œlogicé€šè¿‡httpè¿æ¥statusæœåŠ¡ï¼Œç”±statusä¿å­˜çŠ¶æ€åˆ°redisã€‚å¦‚æœé‡å¤ç™»å½•ï¼Œåˆ™ç”±statusé€šçŸ¥logicç›¸åº”sessioné€€å‡ºè¿æ¥ã€‚
+4\å¦‚æœå·²ç»ç™»å½•ï¼Œå¯ç”±æœåŠ¡æ¨é€æ¶ˆæ¯ï¼Œè½¬å‘åˆ°logicï¼Œé€šè¿‡tcpæ¨é€ã€‚æ¨é€åœ°å€å¦‚ä¸‹ï¼š
 	http://localhost:8880/pushMsg?member_id=&channel=&type=&logic_thread=&msg_body=
-5\ÈÕÖ¾Êä³ö£¬Ä¬ÈÏÎª/tmp/master.log /tmp/client.log
-6\Ôö¼ÓÅäÖÃÎÄ¼ş£¬Ä¬ÈÏ ÅäÖÃÎÄ¼şÃû=³ÌĞòÃû+.cf£¬Èçmaster_server.cf
+5\æ—¥å¿—è¾“å‡ºï¼Œé»˜è®¤ä¸º/tmp/master.log /tmp/client.log
+6\å¢åŠ é…ç½®æ–‡ä»¶ï¼Œé»˜è®¤ é…ç½®æ–‡ä»¶å=ç¨‹åºå+.cfï¼Œå¦‚master_server.cf
 
-7\src/thrift_protosÄ¿Â¼ÏÂÎª·şÎñ¶ËºÍ¿Í»§¶Ë Ğ­Òé¶¨ÒåÎÄ¼ş£¬Í¨¹ı
-	thrift -r --gen cpp -o ./ StateSvr.thrift Éú³É´úÂëÎÄ¼ş
-8\src/thrift_srvÎª·şÎñ¶Ë´úÂëÎÄ¼ş£¬ĞŞ¸Äsvr_job.h svr_job.cpp¼´¿É±àÒëÉú³Éthrift·şÎñ
-9\src/thrift_protosÄ¿Â¼ÏÂ´æ·ÅThriftProxy.cpp ÓÃ»§ÇëÇóthrift·şÎñ
-
-cmd seq
-reload config
-cmdid ip port ha
-thriftÄ£¿éÌí¼Ó½øÈ¥
-
-libgo
-
+7\src/thrift_protosç›®å½•ä¸‹ä¸ºæœåŠ¡ç«¯å’Œå®¢æˆ·ç«¯ åè®®å®šä¹‰æ–‡ä»¶ï¼Œé€šè¿‡
+	thrift -r --gen cpp -o ./ StateSvr.thrift ç”Ÿæˆä»£ç æ–‡ä»¶
+8\src/thrift_srvä¸ºæœåŠ¡ç«¯ä»£ç æ–‡ä»¶ï¼Œä¿®æ”¹svr_job.h svr_job.cppå³å¯ç¼–è¯‘ç”ŸæˆthriftæœåŠ¡
+9\src/thrift_protosç›®å½•ä¸‹å­˜æ”¾ThriftProxy.cpp ç”¨æˆ·è¯·æ±‚thriftæœåŠ¡
